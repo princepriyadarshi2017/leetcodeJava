@@ -20,28 +20,15 @@
 // Output: [0,1]
 
 import java.util.*;
-
-public class TwoSum {
-
-    public int[] twoSum(int[] nums, int target) {
-        Map<Integer, Integer> complements = new HashMap<>();
-        for (int i = 0; i < nums.length; i++) {
-            Integer complementIndex = complements.get(nums[i]);
-            if (complementIndex != null) {
+class Solution {
+    public int[] twoSum (int[] nums, int target) {
+        Map <Integer,Integer> comp=new HashMap<>();
+        for (int i=0;i<nums.length;i++){
+            Integer complementIndex = comp.get(nums[i]);
+            if(complementIndex!=null){
                 return new int[]{i, complementIndex};
             }
-            complements.put(target - nums[i], i);
+            comp.put(target - nums[i],i);
         }
-        return new int[2]; // Return a default array if no sum is found
-    }
-
-    public static void main(String[] args) {
-        TwoSum obj = new TwoSum();
-        int[] nums = {3, 2, 4};
-        int target = 6;
-        int[] result = obj.twoSum(nums, target);
-        System.out.println("Indices with the sum: " + Arrays.toString(result));
-    }
-}
-
-
+  return nums;    
+} }
